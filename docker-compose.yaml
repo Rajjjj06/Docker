@@ -1,0 +1,29 @@
+services:
+  backend:
+    hostname: backend-host
+    build:
+      context: .
+      dockerfile: Dockerfile-backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "5000:5000"
+    networks:
+      - project_network
+  frontend:
+    hostname: frontend-host
+    build:
+      context: .
+      dockerfile: Dockerfile-frontend
+    environment:
+      - BACKEND_URL=http://backend-host:5000
+    ports:
+      - "3000:3000"
+    links:
+      - backend
+    depends_on:
+      - backend
+    networks:
+      - project_network
+networks:
+  project_network:

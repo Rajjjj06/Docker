@@ -1,0 +1,34 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editors and operating-system files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Test, coverage, and build output
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Local generated application data
+backend/data.json
